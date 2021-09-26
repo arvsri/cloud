@@ -19,6 +19,8 @@ spec:
       image: 483954084236.dkr.ecr.ap-south-1.amazonaws.com/hello-world-springboot:latest
       ports:
        - containerPort: 8080
+   nodeSelector:
+    kubernetes.io/os: windows
 ---
 apiVersion: v1
 kind: Service

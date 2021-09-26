@@ -18,6 +18,12 @@ aws ec2 create-key-pair --region <zone> --key-name <key-pair-name>
 
 eksctl create cluster --name <cluster-name> --region <zone> --with-oidc --ssh-access --ssh-public-key <key-pair-name> --node-type=t2.small
 
+### Adding windows node groups 
+eksctl create nodegroup --managed=false --cluster=<cluster-name> --node-ami-family=WindowsServer2019CoreContainer
+
+eksctl utils install-vpc-controllers --cluster=<cluster-name> --approve
+
+
 ### Deploy in cluster
 kubectl get nodes -o wide
 
