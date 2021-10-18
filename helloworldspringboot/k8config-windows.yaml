@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: hello-world-windows-deployment
+ labels:
+  app: hello-world-ws
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: hello-world-ws
+ template:
+  metadata:
+   labels:
+    app: hello-world-ws
+  spec:
+   containers:
+    - name: hello-world-ws
+      image: hello-world:nanoserver
+   nodeSelector:
+    kubernetes.io/os: windows
