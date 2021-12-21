@@ -31,3 +31,18 @@ kubectl get services
 ### Delete EKS Cluster
 eksctl delete cluster --name <cluster-name> --region <zone>
 
+## Commands for building and running the application in GCP GKE
+
+### Push the image to GCR
+
+### Create EKS Cluster
+gcloud container clusters create hello-world-cluster --machine-type e2-micro --zone us-central1-c
+
+gcloud container clusters get-credentials hello-world-cluster --zone us-central1-c --project crazy-project-1
+
+### Deploy in GKE cluster
+
+### Delete GKE Cluster
+
+gcloud container clusters delete hello-world-cluster --zone us-central1-c
+
